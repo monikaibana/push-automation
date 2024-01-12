@@ -1,0 +1,9 @@
+{
+  "testUser": {
+    "userRole": "Admin",
+    "employeeName": "Monika Test",
+    "status": "Enabled",
+    "username": "Mon Test",
+    "password": "passw0rd"
+  }
+}
