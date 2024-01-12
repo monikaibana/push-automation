@@ -1,5 +1,4 @@
 import login from '../selectors/login.css';
-import header from '../selectors/header.css';
 
 Cypress.Commands.add(
   'login',
@@ -18,5 +17,7 @@ Cypress.Commands.add(
 );
 
 Cypress.Commands.add('assertPageHeader', (headerTitle) => {
-  cy.get(header.title).should('be.visible').and('contain', headerTitle);
+  cy.get('.oxd-topbar-header-breadcrumb > .oxd-text')
+    .should('be.visible')
+    .and('contain', headerTitle);
 });

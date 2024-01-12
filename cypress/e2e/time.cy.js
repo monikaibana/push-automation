@@ -11,7 +11,7 @@ describe('Time', () => {
     cy.fixture('time').then((data) => {
       let activities = data.activities.map((activity) => activity.activityName);
       let times = data.activities.map((activity) => activity.time);
-      verifyTimeReport(data.dateFrom, data.dateTo, activities, times);
+      verifyTimeReport(data, activities, times);
     });
   });
 });
