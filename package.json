@@ -1,0 +1,17 @@
+{
+  "name": "push-automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run:chrome": "cypress run --browser chrome",
+    "cypress:run:report": "cypress run --browser chrome --reporter cypress-mochawesome-reporter"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.6.2",
+    "cypress-mochawesome-reporter": "^3.8.0"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "projectName": "Apache Software Foundation - ASF - Phase 1",
+  "dateFrom": "2021-01-01",
+  "dateTo": "2023-12-31",
+  "activities": [
+    {
+      "activityName": "Bug Fixes",
+      "time": "10.50"
+    },
+    {
+      "activityName": "Feature Development",
+      "time": "0.00"
+    },
+    {
+      "activityName": "Implementation",
+      "time": "7.00"
+    },
+    {
+      "activityName": "QA Testing",
+      "time": "22.50"
+    },
+    {
+      "activityName": "Requirement Gathering",
+      "time": "0.00"
+    },
+    {
+      "activityName": "Support & Maintanence",
+      "time": "0.00"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "testAdmin": {
+    "userRole": "Admin",
+    "employeeName": "Monika Employer",
+    "status": "Enabled",
+    "username": "Test Admin",
+    "password": "passw0rd"
+  },
+  "testESS": {
+    "userRole": "ESS",
+    "employeeName": "Monika Employer",
+    "status": "Enabled",
+    "username": "Test ESS",
+    "password": "passw0rd"
+  },
+  "testEmployer": {
+    "firstName": "Monika",
+    "lastName": "Employer"
+  }
+}
