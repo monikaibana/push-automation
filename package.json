@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run --reporter cypress-mochawesome-reporter"
+    "cypress:run:chrome": "cypress run --browser chrome",
+    "cypress:run:report": "cypress run --browser chrome --reporter cypress-mochawesome-reporter"
   },
   "author": "",
   "license": "ISC",

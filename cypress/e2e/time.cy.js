@@ -1,17 +1,19 @@
-import { verifyTimeReport } from '../support/time.cmd';
+import DashboardPage from '../support/pages/dashboardPage';
+import TimePage from '../support/pages/timePage';
 
 describe('Time', () => {
   beforeEach(() => {
     cy.login();
-    cy.visit('time/viewEmployeeTimesheet');
-    cy.assertPageHeader('Time');
+    DashboardPage.navigateToPage('Time');
   });
 
-  it('can query time reports', () => {
+  it.only('can query time reports', () => {
+    TimePage.navigateToProjectReportsTab();
     cy.fixture('time').then((data) => {
       let activities = data.activities.map((activity) => activity.activityName);
       let times = data.activities.map((activity) => activity.time);
-      verifyTimeReport(data, activities, times);
+      TimePage.viewTimeReport(data);
+      TimePage.verifyTimeReport(activities, times);
     });
   });
 });

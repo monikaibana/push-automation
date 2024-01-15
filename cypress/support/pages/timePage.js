@@ -1,26 +1,26 @@
-/* 
-Functions used in the time test script. 
-*/
+class TimePage {
+  navigateToProjectReportsTab() {
+    openReportsDropdown();
+    selectProjectReportsTab();
+  }
 
-export function verifyTimeReport(data, activity, time) {
-  navToReportsPage();
-  navToProjectReportsTab();
-  enterProjectNameAutocomplete(data.projectName);
-  enterDate('From', data.dateFrom);
-  enterDate('To', data.dateTo);
-  clickViewButton();
-  assertActivities(activity, time);
+  viewTimeReport(data) {
+    enterProjectNameAutocomplete(data.projectName);
+    enterDate('From', data.dateFrom);
+    enterDate('To', data.dateTo);
+    clickViewButton();
+  }
+
+  verifyTimeReport(activity, time) {
+    assertActivities(activity, time);
+  }
 }
 
-/* 
-The functions below are helper functions. 
-*/
-
-function navToReportsPage() {
+function openReportsDropdown() {
   cy.get('li').contains('Reports').click();
 }
 
-function navToProjectReportsTab() {
+function selectProjectReportsTab() {
   cy.get('[role=menuitem]').contains('Project Reports').click();
 }
 
@@ -35,9 +35,8 @@ function enterProjectNameAutocomplete(projectName) {
     .parent()
     .parent()
     .find('input')
-    .type(projectNameInput)
-    .wait(2000) // short wait for the autocomplete field api
-    .type('{downArrow} {enter}'); // selects the first result
+    .type(projectNameInput);
+  cy.get('[role=option]').contains(projectName).click({ timeout: 2000 });
 }
 
 function enterDate(dateFieldLabel, dateInput) {
@@ -52,3 +51,5 @@ function assertActivities(activity, time) {
     }
   });
 }
+
+export default new TimePage();

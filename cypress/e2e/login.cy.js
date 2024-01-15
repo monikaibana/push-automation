@@ -1,4 +1,5 @@
-import login from '../selectors/login.css';
+import LoginPage from '../support/pages/LoginPage';
+import DashboardPage from '../support/pages/dashboardPage';
 
 describe('Login', () => {
   beforeEach(() => {
@@ -6,11 +7,9 @@ describe('Login', () => {
   });
 
   it('can log in', () => {
-    cy.get(login.usernameField).type(Cypress.env('username'));
-    cy.get(login.passwordField).type(Cypress.env('password'));
-    cy.get(login.loginButton).click();
-
-    // assert the user is redirected to the correct page
-    cy.assertPageHeader('Dashboard');
+    LoginPage.enterUsername();
+    LoginPage.enterPassword();
+    LoginPage.clickLoginButton();
+    DashboardPage.validateHeader('Dashboard');
   });
 });
